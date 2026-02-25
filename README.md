@@ -5,13 +5,13 @@
 
 Sistem Pembelajaran Berbasis Gamifikasi merupakan aplikasi web yang dikembangkan menggunakan framework Laravel. Sistem ini dirancang untuk meningkatkan motivasi dan keterlibatan siswa dalam proses pembelajaran melalui penerapan elemen gamifikasi seperti poin, level, badge, dan leaderboard.
 
-Aplikasi ini mendukung peran Admin, Guru, dan Siswa dengan fitur manajemen materi, kuis, serta sistem penghargaan berbasis pencapaian.
+Aplikasi ini mendukung peran Guru, dan Siswa dengan fitur manajemen materi, kuis, serta sistem penghargaan berbasis pencapaian.
 
 ---
 
 ## 🚀 Fitur Utama
 
-- 🔐 Login Multi Role (Admin, Guru, Siswa)
+- 🔐 Login Multi Role (Guru, Siswa)
 - 🏆 Sistem Poin Otomatis
 - 🎖 Sistem Badge / Lencana
 - 📊 Leaderboard Peringkat
