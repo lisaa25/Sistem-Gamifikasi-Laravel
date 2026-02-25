@@ -34,16 +34,22 @@ Aplikasi ini mendukung peran Guru, dan Siswa dengan fitur manajemen materi, kuis
 
 ## 🖼 Tampilan Sistem
 
+### 🔐 Tampilan Awal
+![Tampilanawal](screenshots/tampilanawal.png)
+
+### 🔐 Halaman Story
+![Story](screenshots/Story.png)
+
 ### 🔐 Halaman Login
 ![Login](screenshots/login.png)
 
-### 📊 Dashboard Admin
-![Dashboard](screenshots/dashboard_admin.png)
+### 📊 Dashboard Siswa
+![Dashboard Siswa](screenshots/dashboard_siswa.png)
 
 ### 🏆 Leaderboard
 ![Leaderboard](screenshots/leaderboard.png)
 
-### 🎖 Sistem Badge
-![Badge](screenshots/badge.png)
+### 🎖 Profil Siswa
+![Profil](screenshots/profil_siswa.png)
 
 ---
