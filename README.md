@@ -35,7 +35,7 @@ Aplikasi ini mendukung peran Guru, dan Siswa dengan fitur manajemen materi, kuis
 ## 🖼 Tampilan Sistem
 
 ### 🔐 Tampilan Awal
-![Tampilanawal](screenshots/tampilanawal.png)
+![tampilanawal](screenshots/tampilanawal.png)
 
 ### 🔐 Halaman Story
 ![story](screenshots/story.png)
