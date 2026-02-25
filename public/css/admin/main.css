@@ -1,0 +1,125 @@
+/* public/css/admin/main.css */
+
+/* Mengatur font dasar untuk seluruh body */
+body {
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base styles for the dashboard layout */
+.admin-dashboard {
+    display: flex;
+    height: 100vh; /* Set height to full viewport height */
+    overflow: hidden; /* Prevent overall scrolling */
+}
+
+.sidebar-wrapper {
+    width: 280px; /* Lebar sidebar yang lebih konsisten */
+    flex-shrink: 0; /* Mencegah sidebar menyusut */
+    /* background-color: #5C4B99; */ /* Warna ungu gelap untuk sidebar */
+    /* Tailwind classes handle background and shadow now */
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent main content area from overflowing */
+}
+
+main {
+    flex-grow: 1;
+    overflow-y: auto; /* Allow scrolling only for the main content area */
+    padding: 1.5rem; /* p-6 in Tailwind */
+}
+
+/* General styling for alerts (using Tailwind classes for colors) */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem; /* rounded-lg in Tailwind */
+    font-weight: 500; /* font-medium in Tailwind */
+}
+
+/* .alert-success {
+    bg-green-100 border border-green-400 text-green-700
+} */
+
+/* .alert-danger {
+    bg-red-100 border border-red-400 text-red-700
+} */
+
+/* Optional: Scrollbar styling for a cleaner look */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Custom styles for buttons and forms if not fully covered by Tailwind */
+.btn-primary {
+    background-color: #8b5cf6; /* Tailwind purple-500 */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #7c3aed; /* Tailwind purple-600 */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #4b5563; /* Tailwind gray-700 */
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db; /* Tailwind gray-300 */
+    border-radius: 0.5rem;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #8b5cf6; /* Tailwind purple-500 */
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2); /* Tailwind ring-purple-200 */
+}
+
+/* For the profile picture in navbar */
+.user-info .group .absolute {
+    /* Add specific styles for the dropdown menu */
+    transform-origin: top right;
+    animation: fadeIn 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

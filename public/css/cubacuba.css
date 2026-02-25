@@ -1,0 +1,358 @@
+/* public/css/cubacuba.css */
+
+#main-content-wrapper {
+    background: url("https://i.pinimg.com/736x/a8/52/92/a85292cdf19da3f48668b1476c43080e.jpg")
+        no-repeat center center fixed;
+    /*background: url("https://i.pinimg.com/736x/e6/67/24/e66724c4709707d04e6710bebb1617fe.jpg");*/
+    background-size: cover;
+    color: #fff; /* Warna teks default untuk konten kuis */
+    font-family: "Poppins", sans-serif; /* Pindahkan font dari body jika hanya untuk kuis */
+    /* Padding atas bawah agar konten tidak menempel ke navbar/footer */
+    padding-top: 80px;
+    padding-bottom: 70px;
+    box-sizing: border-box; /* Pastikan padding tidak menambah ukuran elemen */
+
+    min-height: calc(
+        100vh - var(--navbar-height, 60px) - var(--footer-height, 80px) - 40px
+    );
+
+    display: flex; /* Jadikan main-content-wrapper sebagai flex container */
+    flex-direction: column; /* Tata isinya secara vertikal */
+    justify-content: center; /* Pusatkan konten vertikal */
+    align-items: center; /* Pusatkan konten horizontal */
+    text-align: center; /* Pusatkan teks di dalam main-content-wrapper jika ada */
+}
+
+/* Ketinggian navbar dan footer bisa didefinisikan sebagai CSS Variables jika Anda mau */
+:root {
+    --navbar-height: 60px; /* Contoh */
+    --footer-height: 80px; /* Contoh */
+}
+
+#kuis {
+    /* #kuis sekarang adalah konten utama di dalam #main-content-wrapper */
+    width: 100%;
+    max-width: 1000px; /* Batasi lebar kuis agar tidak terlalu lebar di layar besar */
+    /* Hapus display: flex dari sini jika #main-content-wrapper sudah flex */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 100%; /* Pastikan #kuis memenuhi tinggi #main-content-wrapper jika diperlukan */
+}
+
+.countdown-container {
+    padding: 60px;
+    height: 100%;
+    display: flex; /* Pertahankan ini agar angka hitung mundur di tengah */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* width: 100%; */
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+
+.countdown-number {
+    font-size: 120px;
+    font-weight: bold;
+    animation: pop 0.5s ease-in-out infinite alternate;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#nilai-kuis {
+    color: #ffd700; /* Warna emas untuk nilai kuis */
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.quiz-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    max-width: 800px;
+    width: 95%;
+    box-sizing: border-box;
+    margin: 20px auto; /* Tambahkan margin auto untuk menengahkan secara horizontal */
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+}
+
+.question-box {
+    background-color: #2c2c44;
+    padding: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+    box-sizing: border-box;
+}
+
+.question-text {
+    word-wrap: break-word;
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+#notifikasi-container {
+    z-index: 9999;
+    /* style="position: fixed; bottom: 0; left: 0; width: 100%; ..." Ini sudah bagus di inline style */
+    /* background-color: rgba(0, 0, 0, 0.7); color: white; text-align: center; padding: 15px; */
+}
+
+.answers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.answer {
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.answer:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.answer.blue {
+    background: linear-gradient(135deg, #2196f3, #1565c0);
+}
+
+.answer.cyan {
+    background: linear-gradient(135deg, #00bcd4, #0097a7);
+}
+
+.answer.orange {
+    background: linear-gradient(135deg, #ff9800, #ef6c00);
+}
+
+.answer.pink {
+    background: linear-gradient(135deg, #ec407a, #ad1457);
+}
+
+.answer.correct {
+    background: linear-gradient(135deg, #4caf50, #2e7d32) !important;
+    color: white;
+    transform: scale(1.02);
+}
+
+.answer.incorrect {
+    background: linear-gradient(135deg, #f44336, #d32f2f) !important;
+    color: white;
+    transform: scale(1.02);
+}
+
+.question-info {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #eee;
+}
+
+/* Gaya untuk container hasil kuis */
+#hasil-kuis {
+    display: none;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 50px; /* Bisa disesuaikan */
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease-out;
+    box-sizing: border-box;
+    max-width: 800px;
+    width: 95%;
+    margin: 20px auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#hasil-kuis h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+#hasil-kuis p {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#hasil-kuis span {
+    font-weight: bold;
+    color: #4caf50;
+}
+
+#hasil-kuis button,
+#hasil-kuis .button-leaderboard {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out,
+        box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#hasil-kuis button:hover,
+#hasil-kuis .button-leaderboard:hover {
+    background-color: #300060;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#hasil-kuis button {
+    background-color: #500080;
+}
+
+#hasil-kuis button:hover {
+    background-color: #300060;
+}
+
+#hasil-kuis .button-leaderboard {
+    background-color: #ff9800;
+}
+
+#hasil-kuis .button-leaderboard:hover {
+    background-color: #e65100;
+}
+/* public/css/cubacuba.css */
+
+/* ... (Kode CSS Anda yang sudah ada di atas) ... */
+
+/* Gaya untuk tombol Lanjut ke Level Berikutnya */
+#hasil-kuis #lanjut-level-button {
+    background-color: #4caf50; /* Warna hijau, bisa disesuaikan */
+    display: inline-block; /* Agar bisa berdampingan dengan tombol lain jika ada ruang */
+    padding: 15px 30px;
+    margin: 10px; /* Memberi sedikit jarak antar tombol */
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out,
+        box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#hasil-kuis #lanjut-level-button:hover {
+    background-color: #2e7d32; /* Warna hijau lebih gelap saat hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ... (Media queries jika ada) ... */
+@media (max-width: 768px) {
+    /* ... (CSS media query Anda yang sudah ada) ... */
+    #hasil-kuis button,
+    #hasil-kuis .button-leaderboard,
+    #hasil-kuis #lanjut-level-button {
+        display: block; /* Buat tombol menjadi blok di layar kecil */
+        width: calc(100% - 20px); /* Ambil lebar penuh dikurangi margin */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (max-width: 768px) {
+    .quiz-container {
+        padding: 30px;
+    }
+
+    .question-text {
+        font-size: 19px;
+    }
+
+    .answers {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .answer {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-container {
+        padding: 20px;
+    }
+
+    .question-text {
+        font-size: 18px;
+    }
+
+    .answer {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+@media (max-width: 768px) {
+    /* ... (CSS media query Anda yang sudah ada) ... */
+    #hasil-kuis button,
+    #hasil-kuis .button-leaderboard,
+    #hasil-kuis #lanjut-level-button,
+    /* TAMBAHKAN INI */
+    #hasil-kuis #ulangi-kuis-button {
+        display: block; /* Buat tombol menjadi blok di layar kecil */
+        width: calc(100% - 20px); /* Ambil lebar penuh dikurangi margin */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

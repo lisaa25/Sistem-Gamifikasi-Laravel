@@ -1,0 +1,201 @@
+/* resources/css/lencanadua.css */
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to bottom, #1c1e4d, #4d5fe1);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container background */
+.container-dua {
+    margin-top: 40px;
+    padding: 80px 40px 40px 40px;
+    background-image: url("https://i.pinimg.com/736x/06/09/bb/0609bbf4763b3242cbfd7d195520ec2f.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.container-dua h2 {
+    color: #fff;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 50px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.karakter-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+.karakter-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+}
+
+.karakter {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+}
+.robot-right {
+    transform: scaleX(-1);
+}
+
+.glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(
+        circle,
+        rgba(141, 65, 228, 0.7) 0%,
+        rgba(92, 248, 240, 0) 80%
+    );
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: pulse-glow 2s infinite alternate;
+}
+
+@keyframes pulse-glow {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
+}
+
+.grid-lencana {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    flex: 1;
+    max-width: 600px; /* Lebar maksimum untuk grid lencana */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* --- LENCANA CARD UTAMA --- */
+.lencana {
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.1
+    ); /* Latar belakang card lencana, sedikit transparan */
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow yang lebih jelas */
+    transition: transform 0.3s ease;
+    /* Hapus position: relative dan cursor: pointer jika tidak ada tooltip */
+}
+
+.lencana:hover {
+    transform: scale(1.05); /* Memperbesar saat hover */
+}
+
+.lencana img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: filter 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- STYLING TEKS DI DALAM LENCANA CARD --- */
+.lencana .badge-name {
+    /* Gunakan class untuk nama lencana */
+    font-size: 1em; /* Ukuran font lebih besar untuk nama */
+    color: #fff; /* Warna putih untuk nama lencana */
+    font-weight: bold;
+    margin-bottom: 5px; /* Jarak antara nama dan deskripsi */
+    min-height: 1.2em; /* Pastikan ada ruang minimum untuk nama */
+}
+
+.lencana .badge-description {
+    /* Gunakan class untuk deskripsi */
+    font-size: 0.85em; /* Ukuran font untuk deskripsi */
+    color: #ccc; /* Warna abu-abu terang untuk deskripsi */
+    margin-bottom: 10px; /* Jarak antara deskripsi dan tanggal */
+    min-height: 3em; /* Beri ruang cukup untuk deskripsi panjang */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Batasi deskripsi hingga 3 baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lencana .badge-date {
+    /* Gunakan class untuk tanggal dicapai */
+    display: block;
+    font-size: 0.75em;
+    color: #aaa; /* Warna abu-abu gelap untuk tanggal */
+    margin-top: 5px;
+}
+
+/* Lencana aktif glow */
+.lencana.unlocked img {
+    box-shadow: 0 0 15px 5px rgba(144, 63, 250, 0.7); /* Glow ungu-biru */
+}
+
+/* Lencana terkunci */
+.lencana.locked img {
+    filter: grayscale(100%) brightness(50%);
+    opacity: 0.6;
+    box-shadow: none;
+}
+
+.lencana.locked .badge-name,
+.lencana.locked .badge-description {
+    color: #aaa; /* Warna teks untuk lencana terkunci */
+}
+
+/* --- STYLE UNTUK TEKS INFORMASI (Bagian 'Ada banyak lencana...') --- */
+.info-text {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+.info-text a {
+    color: #f5cb43;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.info-text a:hover {
+    text-decoration: underline;
+    color: #665b38;
+}
+
+/* --- HAPUS STYLE TOOLTIP --- */
+/*
+.badge-tooltip { ... }
+.badge-tooltip::after { ... }
+.lencana:hover .badge-tooltip { ... }
+.badge-tooltip h3 { ... }
+.badge-tooltip p { ... }
+*/

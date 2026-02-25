@@ -1,0 +1,62 @@
+/* dashboard.css */
+* {
+    font-family: "Lato", sans-serif;
+}
+
+body {
+    background-color: #ebe9ec; /* Warna background dashboard */
+}
+
+.admin-dashboard {
+    display: flex;
+}
+
+.main-content {
+    margin-left: 250px; /* Lebar sidebar */
+    padding: 20px;
+    width: 100%;
+}
+
+/* navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #302a55; /* Warna background navbar */
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    width: calc(100% - 250px); /* Disesuaikan dengan lebar sidebar */
+    top: 0;
+    left: 250px; /* Disesuaikan dengan lebar sidebar */
+    z-index: 1;
+}
+
+.navbar .logo h1 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #fff; /* Warna teks logo */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info span {
+    margin-right: 20px;
+}
+
+.user-info a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #7f72ca;
+    border-radius: 5px;
+    margin-right: 70px;
+}
+
+.user-info a:hover {
+    color: black;
+    background-color: #fff;
+}

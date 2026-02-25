@@ -1,0 +1,56 @@
+/* public/css/admin/sidebar.css */
+/* Seluruh kode CSS di bawah ini telah dikomentari karena styling utama sidebar
+    sekarang menggunakan kelas Tailwind di file sidebar.blade.php. 
+    Jika ingin mengaktifkan kembali styling manual, silakan hapus tanda komentar. */
+/* The sidebar itself is styled with Tailwind classes in sidebar.blade.php */
+/* .sidebar {
+    background-color: #5C4B99;
+    color: white;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+} */
+
+/* Logo styling 
+#logo-sidebar {
+     text-align: center; 
+     font-family: "Inter", sans-serif; 
+     Tailwind classes handle these now 
+}*/
+
+/* Navigation links 
+.sidebar .nav-link {
+    padding: 15px 8px 15px 16px; */
+/* text-decoration: none; */
+/* font-size: 18px; */
+/* color: white; */
+/* display: flex; */
+/* align-items: center; */
+/* font-family: "Inter", sans-serif; */
+/* Tailwind classes handle these now */
+
+/* .sidebar .nav-link i {
+    margin-right: 10px;
+    Tailwind classes handle these now
+}
+
+.sidebar .nav-link:hover {
+    background-color: #7f72ca;
+    color: white;
+    Tailwind classes handle these now
+}
+
+Active link styling (handled by Blade's conditional class)
+.sidebar .nav-link.active {
+    background-color: #7f72ca;
+    color: white;
+}
+
+Social icons
+.social-icons a {
+    color: white;
+    Tailwind classes handle these now
+}
+
+.social-icons a:hover {
+    color: #a78bfa; /* purple-300 */

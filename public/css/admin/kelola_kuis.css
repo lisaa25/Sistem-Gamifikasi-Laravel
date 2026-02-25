@@ -1,0 +1,135 @@
+.kelola-kuis-container {
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f6f8;
+    min-height: 100vh;
+}
+
+.kelola-kuis-container h1 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.action-buttons {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.kuis-list {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Agar tabel responsif jika lebar layar kecil */
+}
+
+.kuis-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.kuis-list thead th {
+    background-color: #343a40;
+    color: #fff;
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #495057;
+}
+
+.kuis-list tbody td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.kuis-list tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.kuis-list tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.aksi {
+    text-align: center;
+    width: 70px; /* Lebar kolom aksi */
+}
+
+.aksi a.btn-sm,
+.aksi button.btn-sm {
+    display: inline-flex; /* Agar ikon berada di tengah tombol */
+    justify-content: center;
+    align-items: center;
+    padding: 5px; /* Kurangi padding karena hanya ikon */
+    font-size: 0.8rem;
+    margin-right: 5px;
+    width: 30px; /* Lebar tombol ikon */
+    height: 30px; /* Tinggi tombol ikon */
+}
+
+.aksi a.btn-sm i,
+.aksi button.btn-sm i {
+    font-size: 1rem; /* Ukuran ikon */
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+.btn-info:hover {
+    background-color: #117a8b;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Penyesuaian lebar kolom */
+.kuis-list thead th:nth-child(2), /* Soal */
+.kuis-list tbody td:nth-child(2) {
+    width: 40%;
+}
+
+.kuis-list thead th:nth-child(3) br {
+    display: block; /* Pastikan <br> berperilaku seperti block element */
+    margin-bottom: 5px;
+} /* Pilihan */
+
+.kuis-list tbody td:nth-child(3) {
+    width: 25%;
+}
+
+.kuis-list thead th:nth-child(4), /* Jawaban */
+.kuis-list tbody td:nth-child(4) {
+    width: 20%;
+}
+
+.kuis-list thead th:nth-child(5), /* Level */
+.kuis-list tbody td:nth-child(5) {
+    width: 10%;
+    text-align: center;
+}

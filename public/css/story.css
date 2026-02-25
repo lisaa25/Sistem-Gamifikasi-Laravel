@@ -1,0 +1,239 @@
+/* story.css */
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Mengunci scroll */
+    font-family: "Poppins", sans-serif; /* Contoh font, pastikan sudah diimport atau gunakan font default */
+    color: #333;
+}
+
+.story-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.story-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Efek gelap */
+    z-index: 0;
+}
+
+/* Pastikan konten di atas overlay */
+.panel-content {
+    position: relative;
+    z-index: 1;
+}
+
+.story-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+    /*filter: brightness(0.5); /* Memberikan sedikit kegelapan pada background */
+}
+
+.story-panel.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.panel-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Agar ada ruang antara bubble dan koko */
+    width: 90%;
+    max-width: 1200px; /* Batasi lebar konten */
+    height: 100%;
+    position: relative;
+}
+
+.koko-img {
+    max-height: 80vh; /* Sesuaikan ukuran Koko */
+    object-fit: contain;
+    position: absolute;
+    bottom: 0; /* Letakkan Koko di bagian bawah */
+    transform: translateX(0); /* Default positioning */
+    transition: transform 0.5s ease-in-out;
+}
+
+.koko-img.right {
+    right: 5%; /* Atur posisi Koko di kanan */
+}
+
+.koko-img.left {
+    left: 5%; /* Atur posisi Koko di kiri */
+}
+
+.bubble {
+    background-color: rgba(255, 255, 255, 0.9); /* Sedikit transparan */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    animation: fadeInScale 0.8s ease-out forwards; /* Animasi bubble */
+    opacity: 0; /* Mulai dari tidak terlihat */
+    transform: scale(0.8); /* Mulai dari ukuran lebih kecil */
+}
+
+.bubble.left {
+    margin-right: auto; /* Dorong bubble ke kiri */
+    margin-left: 5%; /* Jarak dari kiri layar */
+}
+
+.bubble.right {
+    margin-left: auto; /* Dorong bubble ke kanan */
+    margin-right: 5%; /* Jarak dari kanan layar */
+}
+
+.bubble h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #dd09dd; /* Warna ungu khas */
+}
+
+.bubble p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.btn-next,
+.btn-start {
+    background-color: #dd09dd; /* Warna ungu */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none; /* Untuk btn-start yang berupa link */
+    display: inline-block; /* Agar padding dan margin berfungsi baik */
+}
+
+.btn-next:hover,
+.btn-start:hover {
+    background-color: #f3c1f3;
+    transform: translateY(-3px);
+}
+
+/* Membalik gambar Koko secara horizontal */
+.flip-horizontal {
+    transform: scaleX(-1);
+}
+.koko-img.right {
+    right: 3%;
+}
+
+#panel-3 .bubble {
+    margin-left: 8%; /* Geser ke kiri */
+    margin-right: auto;
+}
+#panel-3 .koko-img {
+    max-height: 60vh; /* Sesuaikan ukuran, default-nya 80vh */
+    width: auto;
+}
+
+#panel-4 .koko-img {
+    left: 5%;
+    right: auto;
+    transform: scaleX(-1);
+}
+
+#panel-4 .bubble {
+    margin-left: 40%; /* geser bubble agak ke kanan */
+    margin-right: 3%;
+}
+
+/* Animasi Fade In dan Scale untuk bubble */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .panel-content {
+        flex-direction: column; /* Ubah tata letak menjadi kolom */
+        justify-content: flex-end; /* Dorong konten ke bawah */
+        padding-bottom: 20px; /* Berikan sedikit ruang di bawah */
+    }
+
+    .koko-img {
+        position: relative; /* Kembali ke posisi relatif untuk tata letak kolom */
+        width: 60%;
+        max-height: 40vh;
+        order: 1; /* Pindahkan koko ke atas dalam urutan flex */
+        margin-bottom: 20px;
+        transform: none; /* Hapus transformasi */
+    }
+
+    .bubble {
+        margin: 0 5%; /* Sesuaikan margin untuk mobile */
+        max-width: 90%;
+        order: 2; /* Pindahkan bubble ke bawah dalam urutan flex */
+    }
+
+    .bubble.left,
+    .bubble.right {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bubble h2 {
+        font-size: 1.8em;
+    }
+
+    .bubble p {
+        font-size: 1em;
+    }
+
+    .btn-next,
+    .btn-start {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .bubble {
+        padding: 20px;
+    }
+
+    .bubble h2 {
+        font-size: 1.5em;
+    }
+
+    .bubble p {
+        font-size: 0.9em;
+    }
+}

@@ -1,0 +1,53 @@
+body {
+    background: linear-gradient(to bottom right, #dff6e2, #c1ebd5);
+    font-family: "Poppins", sans-serif;
+}
+
+.lencana-container {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.lencana-header h1 {
+    font-size: 2.2rem;
+    color: #1a5319;
+    margin-bottom: 0.5rem;
+}
+
+.lencana-header p {
+    font-size: 1rem;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.lencana-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.lencana-item {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.lencana-item:hover {
+    transform: scale(1.05);
+}
+
+.lencana-item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+}
+
+.lencana-item p {
+    font-weight: bold;
+    color: #1a5319;
+    margin: 0;
+}

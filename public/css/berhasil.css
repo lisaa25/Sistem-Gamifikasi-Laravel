@@ -1,0 +1,242 @@
+body {
+    background-color: #1e1e1e;
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.judul {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2rem;
+    color: #eee; /* Agar lebih terlihat di background gelap */
+}
+
+.materi-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    position: relative;
+    background-image: url("https://i.pinimg.com/736x/7f/0e/c0/7f0ec0b55405687a8a682be5d23c9150.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 20px; /* Tambahkan padding agar karakter tidak terlalu mepet */
+    border-radius: 15px; /* Sedikit rounded corner */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); /* Shadow lebih menonjol */
+}
+
+canvas#pdf-canvas {
+    max-width: 90%;
+    width: 800px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    background-color: white;
+}
+
+.character-img {
+    width: 90px; /* Perbesar sedikit karakter */
+    position: absolute;
+    bottom: -40px; /* Sesuaikan posisi agar tidak terlalu jauh */
+    filter: drop-shadow(
+        0 5px 5px rgba(0, 0, 0, 0.3)
+    ); /* Tambahkan shadow pada karakter */
+}
+
+.character-img.left {
+    left: 5%;
+}
+
+.character-img.right {
+    right: 5%;
+    transform: scaleX(-1);
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    background: transparent;
+}
+
+.nav-buttons button {
+    background-color: #4a0e6f; /* Ungu gelap */
+    color: white;
+    border: none;
+    padding: 12px 25px; /* Perbesar padding */
+    border-radius: 10px; /* Lebih rounded */
+    font-size: 1.1rem; /* Perbesar font */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-buttons button:hover:not(:disabled) {
+    background-color: #6a0dad; /* Ungu lebih terang saat hover */
+    transform: translateY(-2px); /* Efek sedikit terangkat */
+}
+
+.nav-buttons button:active:not(:disabled) {
+    transform: translateY(0); /* Kembali ke posisi semula saat diklik */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya untuk tombol yang dinonaktifkan */
+.nav-buttons button:disabled {
+    background-color: #333; /* Warna lebih gelap untuk nonaktif */
+    color: #999; /* Teks abu-abu */
+    cursor: not-allowed;
+    opacity: 0.7;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Gaya khusus untuk tombol "Selesai Materi" */
+.nav-buttons button.finished-materi-btn {
+    background-color: #28a745; /* Hijau */
+    color: white;
+    font-weight: bold;
+    animation: pulse 1.5s infinite; /* Efek berkedip */
+}
+
+.nav-buttons button.finished-materi-btn:hover:not(:disabled) {
+    background-color: #218838; /* Hijau lebih gelap saat hover */
+}
+
+/* Animasi pulse untuk tombol selesai materi */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.last-slide-message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #4a0e6f; /* Warna ungu gelap */
+    color: white;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kuis-container {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background-color: #2a2a2a; /* Background lebih gelap */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.kuis-container h3 {
+    color: #eee; /* Warna teks lebih terang */
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Alert styling */
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    padding: 12px 25px; /* Padding lebih besar */
+    font-size: 1.1rem; /* Font lebih besar */
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px; /* Lebih rounded */
+    border: none;
+    margin: 8px; /* Jarak antar tombol */
+    transition: background-color 0.3s ease, transform 0.2s ease,
+        box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-success {
+    background-color: #28a745; /* Hijau */
+    color: white;
+}
+.btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-info {
+    background-color: #17a2b8; /* Biru muda */
+    color: white;
+}
+.btn-info:hover {
+    background-color: #138496;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+/* Custom Modal Styling */
+.custom-modal-content {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    color: #333;
+    font-family: "Inter", sans-serif;
+}
+
+.custom-modal-button {
+    background-color: #6a0dad; /* Purple */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.custom-modal-button:hover {
+    background-color: #5a0a9d;
+}

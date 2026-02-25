@@ -1,0 +1,63 @@
+/* public/css/admin/navbar.css */
+
+/* Navbar styling is mostly handled by Tailwind classes in navbar.blade.php */
+/*
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    margin: 1.5rem 1.5rem 0 1.5rem;
+}
+*/
+
+/*
+.navbar .logo h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    Tailwind classes handle these now
+}
+
+.navbar .user-info {
+    display: flex;
+    align-items: center;
+    space-x-4
+}
+
+.navbar .user-info span {
+    color: #4B5563;
+    font-weight: 500;
+    Tailwind classes handle these now
+}
+
+.navbar .user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    border: 2px solid #8B5CF6;
+    Tailwind classes handle these now
+}
+
+.navbar .user-info .relative .absolute {
+    background-color: white;
+    border-radius: 0.375rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    py-1
+    z-index: 20;
+    Tailwind classes handle these now
+}
+
+.navbar .user-info .relative .absolute a {
+    display: block;
+    px-4 py-2
+    color: #374151;
+    hover:bg-gray-100
+}
+
+.navbar .user-info .relative .absolute a.text-red-600:hover {
+    background-color: #FEE2E2; /* red-100 */

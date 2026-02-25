@@ -1,0 +1,701 @@
+/* resources/css/profil.css */
+
+/* --- GLOBAL STYLES --- */
+body {
+    font-family: "Poppins", sans-serif;
+    background-image: url("/img/panel1.png"); /* Ganti dengan path panel1 */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- MAIN CONTAINER --- */
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    padding: 50px 30px;
+    margin-top: 20px;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.5
+    ); /* Semi-transparan untuk layer di atas background */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    backdrop-filter: blur(8px);
+}
+
+/* --- NOTIFICATION AREA --- */
+.notification-area {
+    width: 100%; /* Take full width */
+    margin-bottom: 20px;
+    text-align: center;
+}
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+.text-danger-small {
+    /* Added for modal password errors */
+    color: #ff6b6b; /* Soft red for errors */
+    font-size: 0.85em;
+    margin-top: 5px;
+    text-align: left;
+}
+
+/* --- PROFILE SECTION (left side) --- */
+.profil-section {
+    flex: 1; /* Take available space */
+    min-width: 350px; /* Minimum width to prevent shrinking too much */
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.profil-card {
+    width: 100%; /* Ensure the form fills the profil-section */
+    /*background-color: rgba(255, 255, 255, 0.05); /* Slightly transparent */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px); /* Blur effect for background */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e0e0e0;
+    text-align: center;
+    position: relative; /* For photo overlay positioning */
+    margin-bottom: 30px; /* Space between profil-card and elements below */
+}
+
+.profil-header {
+    display: flex;
+    flex-direction: column; /* Stack photo above name/level */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profil-foto-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    /*border: 4px solid #f5cb43; /* Yellow border */
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.profil-foto-wrapper:hover {
+    transform: scale(1.05);
+}
+.profil-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.change-photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(0, 0, 0, 0.6);*/
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.profil-foto-wrapper:hover .change-photo-overlay {
+    opacity: 1;
+}
+
+.profil-nama-level {
+    text-align: center;
+    width: 100%;
+}
+.profil-nama-level h2 {
+    margin: 0 0 10px 0;
+    font-size: 2em;
+    color: #fff;
+}
+.profil-nama-level .input-edit {
+    font-size: 2em;
+    text-align: center;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #0c63c7;
+    color: #fff;
+    width: 80%;
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+.badge-level {
+    display: block;
+    background-color: #0c63c7; /* Purple color */
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 auto 20px auto;
+}
+.progress {
+    height: 100%;
+    background-color: #0c63c7; /* Green */
+    border-radius: 4px;
+}
+
+.profil-body {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.profil-item {
+    display: flex; /* Use flexbox for profile items */
+    align-items: center; /* Vertically center */
+    gap: 10px; /* Space between icon and text */
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #eee;
+}
+.profil-item strong {
+    /*color: #f5cb43; /* Icon/label color */
+    min-width: 80px; /* Align labels left */
+}
+.profil-item span {
+    flex: 1; /* Take remaining space */
+    word-wrap: break-word; /* Break long words */
+}
+.profil-item .input-edit {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 5px 0;
+}
+
+.profil-actions {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+.btn-edit,
+.btn-save,
+.btn-cancel {
+    background-color: #0c63c7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+.btn-edit:hover {
+    background-color: #86b6f5;
+}
+.btn-save {
+    background-color: #28a745;
+}
+.btn-save:hover {
+    background-color: #218838;
+}
+.btn-cancel {
+    background-color: #dc3545;
+}
+.btn-cancel:hover {
+    background-color: #c82333;
+}
+
+/* Margin top for password toggle button */
+.mt-3 {
+    margin-top: 15px;
+}
+
+/* --- CHARACTER INSIGHT (SMALL) --- */
+/* Perubahan di sini untuk Karakter Koko dan Teksnya */
+.karakter-info-small {
+    display: flex;
+    align-items: center; /* Menyelaraskan item secara vertikal di tengah */
+    justify-content: flex-start; /* Mengatur item dari kiri */
+    gap: 15px;
+    margin-bottom: 30px;
+    /* Removed margin-top and padding/background for this class, as it's part of badges-header now */
+    /* If you want a background/padding specifically around this section, wrap it in another div */
+    flex-wrap: wrap; /* Izinkan wrapping jika layar kecil */
+    width: 100%; /* Pastikan mengambil lebar penuh di dalam parentnya */
+}
+
+.karakter-container-small {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+.karakter-small {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+    transform: scaleX(1);
+}
+
+.koko-glow {
+    filter: drop-shadow(0 0 10px #0c63c7); /* A slight glow directly on Koko */
+}
+
+.glow-small {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110px; /* Adjusted size */
+    height: 110px; /* Adjusted size */
+    background: radial-gradient(
+        circle,
+        rgba(42, 84, 221, 0.7) 0%,
+        rgba(92, 248, 240, 0) 80%
+    );
+    border-radius: 50%;
+    filter: blur(15px);
+    animation: pulse-glow 2s infinite alternate;
+}
+
+.info-text-small {
+    font-size: 0.9em;
+    max-width: 250px;
+    text-align: left; /* Pastikan teks rata kiri */
+    flex-grow: 1; /* Biarkan teks mengambil sisa ruang */
+}
+
+.info-text-small p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.info-text-small a {
+    color: #f5cb43;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.info-text-small a:hover {
+    text-decoration: underline;
+    color: #665b38;
+}
+
+/* --- BADGES SECTION (right side) --- */
+.badges-section {
+    flex: 2; /* Take more space than profile */
+    min-width: 450px; /* Minimum width */
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.05
+    ); /* Latar belakang lebih transparan dari profil */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.badges-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.badges-header h3 {
+    font-size: 2.2em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* --- BADGE GRID --- */
+.grid-lencana {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(140px, 1fr)
+    ); /* More compact columns */
+    gap: 15px; /* Space between badges */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1); /* Badge grid background */
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* --- SINGLE BADGE CARD --- */
+.lencana {
+    background-color: rgba(255, 255, 255, 0.08); /* Transparent badge card */
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Darker shadow */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex; /* Use flexbox for badge content */
+    flex-direction: column; /* Vertical content */
+    justify-content: space-between; /* To push date to bottom */
+    min-height: 220px; /* Consistent card height */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Slight border */
+}
+
+.lencana:hover {
+    transform: translateY(-5px) scale(1.02); /* More engaging hover effect */
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.15
+    ); /* Slightly brighter on hover */
+}
+
+.lencana img {
+    width: 70px; /* Badge image size */
+    height: 70px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin: 0 auto 10px auto; /* Center image */
+    transition: filter 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lencana .badge-name {
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 5px;
+    line-height: 1.2;
+    min-height: 2.4em; /* Space for 2 lines of name */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lencana .badge-description {
+    font-size: 0.8em;
+    color: #ddd;
+    margin-bottom: 10px;
+    min-height: 3.2em; /* Space for 4 lines of description */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1; /* Push down if other content is short */
+}
+
+.lencana .badge-date {
+    display: block;
+    font-size: 0.7em;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+/* Unlocked badge styling */
+.lencana.unlocked img {
+    box-shadow: 0 0 12px 4px rgba(38, 67, 230, 0.7); /* Purple-blue glow */
+}
+
+/* Locked badge styling */
+.lencana.locked img {
+    filter: grayscale(100%) brightness(50%);
+    opacity: 0.5;
+    box-shadow: none;
+}
+.lencana.locked .badge-name {
+    color: #aaa;
+}
+.lencana.locked .badge-description {
+    color: #999;
+}
+
+/* --- MODAL BOX (for change password) --- */
+.modal {
+    display: none; /* Crucial: Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center; /* For centering content with flex */
+    align-items: center; /* For centering content with flex */
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: auto;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    position: relative;
+    color: #e0e0e0;
+}
+
+/* Close Button */
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Animation for modal */
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+/* Styles for modal specific form content */
+.modal-content h4 {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 25px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.modal-content .profil-item {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.modal-content .profil-item strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.modal-content .input-edit {
+    width: calc(
+        100% - 24px
+    ); /* Adjusted width to account for padding and border */
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1em;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+.modal-content .input-edit:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.modal-content .profil-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.modal-content .btn-save,
+.modal-content .btn-cancel {
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    flex-grow: 1;
+}
+
+.modal-content .btn-save {
+    background-color: #28a745;
+    color: white;
+}
+
+.modal-content .btn-save:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.modal-content .btn-cancel {
+    background-color: #dc3545;
+    color: white;
+}
+
+.modal-content .btn-cancel:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Style for validation errors in modal */
+.input-edit.is-invalid {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* --- ANIMATIONS (General) --- */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pulse-glow {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 992px) {
+    .main-container {
+        flex-direction: column; /* Stack vertically on medium screens */
+        padding: 30px;
+    }
+    .profil-section,
+    .badges-section {
+        width: 100%; /* Take full width */
+        min-width: unset;
+    }
+    .profil-section {
+        margin-bottom: 30px; /* Space between sections */
+    }
+    /* Koko info on smaller screens */
+    .karakter-info-small {
+        justify-content: center; /* Center Koko and text when wrapped */
+        flex-direction: column; /* Stack Koko and text vertically */
+        text-align: center;
+    }
+    .info-text-small {
+        text-align: center; /* Center text when stacked */
+        max-width: 100%; /* Allow text to take full width */
+    }
+}
+
+@media (max-width: 768px) {
+    .profil-item {
+        flex-direction: column; /* Stack profile items vertically */
+        align-items: flex-start;
+    }
+    .profil-item strong {
+        min-width: unset;
+    }
+    .badges-header h3 {
+        font-size: 1.8em;
+    }
+    .grid-lencana {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(120px, 1fr)
+        ); /* Smaller columns */
+        gap: 10px;
+    }
+    .lencana {
+        padding: 10px;
+        min-height: 180px; /* Reduce min card height */
+    }
+    .lencana img {
+        width: 60px;
+        height: 60px;
+    }
+    .lencana .badge-name {
+        font-size: 1em;
+    }
+    .lencana .badge-description {
+        font-size: 0.75em;
+        -webkit-line-clamp: 3; /* May need fewer lines */
+        line-clamp: 3;
+        min-height: 2.5em;
+    }
+    .modal-content {
+        padding: 20px;
+        width: 90%;
+    }
+    .modal-content h4 {
+        font-size: 1.5em;
+    }
+    .modal-content .btn-save,
+    .modal-content .btn-cancel {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+}

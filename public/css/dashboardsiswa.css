@@ -1,0 +1,214 @@
+.dashboard-container {
+    margin-top: 90px;
+    padding: 40px 30px;
+    font-family: "Poppins", sans-serif;
+    background-color: #182952;
+    min-height: 100vh;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url("https://i.pinimg.com/736x/c5/46/6f/c5466f256a0329346ab92a2b920fc8ea.jpg");
+    /* background: url("https://i.pinimg.com/736x/2c/93/89/2c93893c7f3d9e3c75628a218b338e6c.jpg");*/
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 40px;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    color: #fff;
+}
+
+.hero-text h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.speech {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.status-boxes {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.status-box {
+    background: #ffffff;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.hero-character {
+    flex-shrink: 0;
+}
+
+.character-img-large {
+    width: 280px;
+}
+
+/* ======================= */
+/* === Aktivitas Bagian === */
+/* ======================= */
+
+.activity-section h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.activity-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    gap: 20px;
+}
+
+.activity-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    color: #333;
+}
+
+.activity-card:hover {
+    transform: translateY(-4px);
+}
+
+.activity-img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 14px;
+}
+
+.card-content h4 {
+    font-size: 17px;
+    margin: 0 0 6px;
+}
+
+.progress-bar {
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress {
+    background: #80af81;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.activity-date {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #666;
+}
+
+.no-activity {
+    text-align: center;
+    color: #ccc;
+    font-size: 1.1em;
+    margin: 40px 0;
+}
+
+/* Tombol Selengkapnya */
+.load-more-container {
+    text-align: center;
+    margin-top: 35px;
+    padding-bottom: 60px;
+}
+
+#loadMoreBtn {
+    background-color: #5e60ce;
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#loadMoreBtn:hover:not(:disabled) {
+    background-color: #4a4ccf;
+    transform: translateY(-2px);
+}
+
+#loadMoreBtn:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* ======================= */
+/* === RESPONSIVE === */
+/* ======================= */
+@media (max-width: 992px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .hero-character {
+        order: -1;
+    }
+
+    .character-img-large {
+        width: 220px;
+    }
+
+    .hero-text h2 {
+        font-size: 26px;
+    }
+
+    .speech {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .status-boxes {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .character-img-large {
+        width: 180px;
+    }
+
+    .dashboard-container {
+        padding: 20px;
+    }
+
+    .activity-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-card {
+        width: 100%;
+    }
+}

@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: url("/img/panel1.png") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.leaderboard-container {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding-top: 30px;
+    padding: 20px 30px;
+    background: rgba(20, 30, 70, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(108, 99, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+/* Header */
+.leaderboard-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.leaderboard-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+.periode-info {
+    color: #ccc;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+/* Top 3 */
+.top-summary {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.top-card {
+    background: linear-gradient(135deg, #3a4dc0, #6a6dff);
+    border-radius: 16px;
+    padding: 20px;
+    width: 160px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(108, 99, 255, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.top-card:hover {
+    transform: scale(1.05);
+}
+
+.top-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin: 10px 0;
+}
+
+.rank-icon {
+    font-size: 1.2rem;
+    color: gold;
+    font-weight: bold;
+}
+
+.name {
+    color: #fff;
+    font-weight: 600;
+    margin: 8px 0 2px;
+}
+
+.score {
+    color: #4affc1;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Rank List */
+.rank-list {
+    margin-top: 20px;
+    border-radius: 16px;
+    padding: 20px;
+    background: rgba(34, 44, 99, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.rank-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    background: rgba(20, 25, 70, 0.7);
+    border-radius: 12px;
+    transition: background 0.2s ease;
+}
+
+.rank-item:hover {
+    background: rgba(50, 60, 120, 0.8);
+}
+
+.rank-number {
+    width: 60px;
+    font-weight: bold;
+    color: #aaaaff;
+}
+
+.rank-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.rank-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
+.rank-name {
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.rank-score {
+    font-weight: bold;
+    color: #6c63ff;
+}
+
+/* Highlight user sendiri */
+.current-user {
+    background: rgba(255, 236, 153, 0.15);
+    border-left: 5px solid #ffd700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .leaderboard-container {
+        margin: 100px 10px;
+    }
+    .top-summary {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,27 @@
+/* 
+Seluruh styling di file ini sudah ditangani oleh Tailwind di dataUser.blade.php.
+CSS dikomentari agar tidak terjadi error atau notifikasi kosong.
+*/
+
+/*
+public/css/admin/dataUser.css
+
+.container { ... }
+.header-flex { ... }
+.header-flex h1 { ... }
+.btn-tambah { ... }
+.btn-tambah:hover { ... }
+.filter-kelas .btn-filter { ... }
+.filter-kelas .btn-filter:hover { ... }
+.filter-kelas .btn-filter.active { ... }
+.table-container { ... }
+.table { ... }
+.table thead th { ... }
+.table tbody tr { ... }
+.table tbody tr:hover { ... }
+.table td { ... }
+.btn-action { ... }
+.btn-action i { ... }
+.btn-action.bg-yellow-500:hover { ... }
+.btn-action.bg-red-500:hover { ... }
+*/

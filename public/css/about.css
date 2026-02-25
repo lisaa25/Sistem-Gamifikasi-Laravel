@@ -1,0 +1,248 @@
+#about {
+    width: 100%;
+    padding-top: 70px;
+    padding-bottom: 0;
+    /*background: linear-gradient(to right, #4623e9, #381cb2);*/
+    background: url("https://i.pinimg.com/736x/92/42/1a/92421afc43b0a1cd93872950d2fa7340.jpg")
+        no-repeat center center;
+    background-size: cover;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+}
+/*#about::after {
+    content: "";
+    position: absolute;
+    bottom: -20px; /* Sesuaikan posisi */
+/*left: 0;
+    width: 100%;
+    height: 50px; /* Tinggi area blur */
+/*background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #241478);
+    filter: blur(10px); /* Efek blur */
+/* z-index: 2;
+}*/
+.about-section {
+    margin-top: 60px;
+    margin-bottom: 0;
+}
+
+.about-section h1 {
+    text-align: left; /* Header tidak di tengah */
+    font-size: 36px;
+    color: white; /* Warna putih untuk header */
+    padding-top: 50px;
+    margin-bottom: 20px; /* Tambahkan jarak bawah */
+    /*text-align: center;
+    font-size: 36px;
+    color: white;
+    padding-top: 50px;*/
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.description {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    flex: 1 1 50%;
+    padding: 50px;
+    font-size: 20px;
+}
+
+.description p {
+    text-align: justify; /* Paragraf rata kiri-kanan */
+    color: white; /* Warna putih untuk teks */
+    line-height: 1.8; /* Tambahkan jarak antar baris */
+    margin-bottom: 20px; /* Tambahkan jarak bawah */
+    /*line-height: 1.6;*/
+}
+
+/*.image {
+    flex: 1 1 40%;
+    display: flex;
+    /*justify-content: center;*/
+/*justify-content: flex-end; /* Menggeser gambar ke kanan */
+/* position: relative;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: 100%;
+    /*box-shadow: 15px 0 25px rgba(118, 231, 212, 0.3);*/
+*/ .image {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    align-items: flex-end; /* Menambahkan properti ini untuk melekatkan gambar ke bawah */
+    height: 100%;
+}
+
+/*kalau mau gambar*/
+.image img {
+    max-width: 800px;
+    border-radius: 20px 20px 0 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    object-fit: cover;
+    min-height: 450px;
+    align-self: flex-end;
+}
+
+/*ini video*/
+.image img {
+    max-width: 800px;
+    border-radius: 20px; /* Tambahkan border-radius jika diperlukan */
+    object-fit: cover; /* Pastikan GIF menyesuaikan kontainer */
+    width: 100%; /* GIF memenuhi lebar kontainer */
+    height: auto; /* Pertahankan rasio GIF */
+    animation: slow-gif 5s steps(1) infinite; /* Simulasi perlambatan */
+}
+
+/* Menghilangkan space/gap antara section */
+.about-section {
+    margin-top: 50px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#about {
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 0; /* Menambahkan ini untuk menghilangkan padding bawah */
+    background: url("https://i.pinimg.com/736x/92/42/1a/92421afc43b0a1cd93872950d2fa7340.jpg")
+        no-repeat center center;
+    background-size: cover;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Pastikan tidak ada space di antara bagian about dan kelebihan */
+#kelebihan {
+    margin-top: 0;
+    padding-top: 30px;
+    padding: 50px 30px 30px;
+    background-color: #241478;
+    text-align: center;
+}
+
+/*.image img {
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    object-fit: cover;
+    object-position: top center;
+    background-color: transparent;
+    border-radius: 30px;*/
+
+/* Tambahkan shadow ke kanan saja */
+
+.image img {
+    max-width: 800px;
+    border-radius: 20px;
+    padding-bottom: 0px;
+    margin-bottom: 0;
+    object-fit: cover;
+    /*box-shadow: 15px 0 25px rgba(118, 231, 212, 0.3);*/
+}
+.image img:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+.btn-trailer {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #00e0ff;
+    color: #000;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-trailer:hover {
+    background-color: #fff;
+    color: #381cb2;
+}
+.cloud-divider {
+    width: 100%;
+    text-align: center; /* Pusatkan gambar */
+    margin: 0; /* Hilangkan margin */
+    padding: 0; /* Hilangkan padding */
+}
+
+.cloud-divider img {
+    width: 100%; /* Gambar memenuhi lebar layar */
+    height: auto; /* Pertahankan rasio gambar */
+    display: block; /* Hilangkan jarak bawah default */
+    margin-top: -20px; /* Sesuaikan agar gambar awan menyatu dengan elemen sebelumnya */
+}
+#kelebihan {
+    margin-top: 0;
+    padding-top: 0;
+    padding: 0px 0px 30px 30px;
+    background-color: #241478;
+    text-align: center;
+}
+
+#kelebihan h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#kelebihan p {
+    color: #e0e0e0;
+    margin-bottom: 30px;
+}
+
+.satu {
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 15px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.satu:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.satu h3 {
+    color: #381cb2;
+    margin-bottom: 10px;
+}
+
+.wave-divider {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    line-height: 0;
+    margin: 0; /* Hapus margin */
+    padding: 0; /* Hapus padding */
+}
+
+.wave-divider svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 50%;
+}
+@keyframes slow-gif {
+    0% {
+        visibility: visible;
+    }
+    100% {
+        visibility: visible;
+    }
+}
