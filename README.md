@@ -1,39 +1,49 @@
-# E-Commerce Kerajinan Kayu  
+# 🎮 Sistem Pembelajaran Berbasis Gamifikasi
+### (Laravel Web Application)
 
-![Laravel](https://laravel.com/img/logotype.min.svg)  
+## 📌 Deskripsi
 
-Proyek ini adalah platform e-commerce untuk menjual kerajinan kayu, dibangun dengan Laravel.  
-Proyek ini juga merupakan tugas UAS Semester 4 untuk mata kuliah E-Commerce dan Pemrograman Web.  
+Sistem Pembelajaran Berbasis Gamifikasi merupakan aplikasi web yang dikembangkan menggunakan framework Laravel. Sistem ini dirancang untuk meningkatkan motivasi dan keterlibatan siswa dalam proses pembelajaran melalui penerapan elemen gamifikasi seperti poin, level, badge, dan leaderboard.
 
-## Fitur  
-- Manajemen produk dan kategori  
-- Sistem autentikasi (Login & Register)  
-- Keranjang belanja dan checkout  
-- Pembayaran dengan Midtrans  
+Aplikasi ini mendukung peran Admin, Guru, dan Siswa dengan fitur manajemen materi, kuis, serta sistem penghargaan berbasis pencapaian.
 
-## Cara Menjalankan Proyek  
-1. Clone repository ini:  
-   git clone https://github.com/lisaa25/ecommerce-kerajinan-kayu.git
+---
 
-2. Masuk ke folder proyek :
-   cd ecommerce-kerajinan-kayu
+## 🚀 Fitur Utama
 
-3. Install dependensi Laravel :
-   composer install
+- 🔐 Login Multi Role (Admin, Guru, Siswa)
+- 🏆 Sistem Poin Otomatis
+- 🎖 Sistem Badge / Lencana
+- 📊 Leaderboard Peringkat
+- 📚 Manajemen Materi
+- 📝 Manajemen Kuis
+- 👤 Manajemen Profil Pengguna
+- 🎯 Sistem Level Pembelajaran
 
-4. Duplikasi file .env.example menjadi .env dan sesuaikan konfigurasi database.
-   
-6. Jalankan migrasi database  :
-   php artisan migrate
+---
 
-7. Jalankan server lokal:
-   php artisan serve
+## 🛠 Teknologi yang Digunakan
 
+- PHP
+- Laravel
+- MySQL
+- Bootstrap / CSS
+- JavaScript
 
+---
 
+## 🖼 Tampilan Sistem
 
+### 🔐 Halaman Login
+![Login](screenshots/login.png)
 
+### 📊 Dashboard Admin
+![Dashboard](screenshots/dashboard_admin.png)
 
+### 🏆 Leaderboard
+![Leaderboard](screenshots/leaderboard.png)
 
+### 🎖 Sistem Badge
+![Badge](screenshots/badge.png)
 
-   
+---
