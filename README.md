@@ -38,13 +38,13 @@ Aplikasi ini mendukung peran Guru, dan Siswa dengan fitur manajemen materi, kuis
 ![Tampilanawal](screenshots/tampilanawal.png)
 
 ### 🔐 Halaman Story
-![Story](screenshots/Story.png)
+![story](screenshots/story.png)
 
 ### 🔐 Halaman Login
 ![Login](screenshots/login.png)
 
 ### 📊 Dashboard Siswa
-![Dashboard Siswa](screenshots/dashboard_siswa.png)
+![dashboard_siswa](screenshots/dashboard_siswa.png)
 
 ### 🏆 Leaderboard
 ![Leaderboard](screenshots/leaderboard.png)
